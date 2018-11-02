@@ -1,11 +1,13 @@
 # js-test-project
 
-Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche dann (simuliert) "abgearbeitet" werden. Mehrere browser-clients können gleichzeitig arbeiten.
+Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche dann (simuliert) "abgearbeitet" werden. Mehrere browser-clients können gleichzeitig arbeiten und Tasks einreihen.
 
 ## Aufbau
 
 - beide Projekte (server und frontend) nutzen die gleiche package.json, es können beliebige packages hinzugefügt werden
 - ES7 ist erwünscht
+- Prettier (https://prettier.io/) ist erwünscht
+- lodash (https://lodash.com/) ist empfehlenswert
 - es muss keine Datenbank genutzt werden (alles in Objekte/Arrays)
 - ein besonders schickes, "gestyltes" Erscheinungsbild ist nebensächlich
 
@@ -47,7 +49,7 @@ Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche 
 - reactstrap (react components für bootstrap) kann gerne verwendet werden
 - Ausführen mit `npm start`
 
-### Externe Komponenten
+### packages
 
 - https://github.com/reactstrap/reactstrap
 - https://github.com/socketio/socket.io-client
