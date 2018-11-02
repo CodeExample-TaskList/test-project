@@ -6,8 +6,8 @@ Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche 
 
 - beide Projekte (server und frontend) nutzen die gleiche package.json, es können beliebige packages hinzugefügt werden
 - ES7 ist erwünscht
-- Prettier (https://prettier.io/) ist erwünscht
-- lodash (https://lodash.com/) ist empfehlenswert
+- Prettier (https://prettier.io) ist erwünscht (kann ganz einfach als Visual Studio Code Erweiterung installiert werden)
+- lodash (https://lodash.com) ist empfehlenswert
 - es muss keine Datenbank genutzt werden (alles in Objekte/Arrays)
 - ein besonders schickes, "gestyltes" Erscheinungsbild ist nebensächlich
 
