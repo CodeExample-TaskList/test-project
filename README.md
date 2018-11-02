@@ -1,6 +1,6 @@
 # js-test-project
 
-Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche dann (simuliert) "abgearbeitet" werden. Mehrere browser-clients können gleichzeitig arbeiten und Tasks einreihen.
+Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche dann (simuliert) "abgearbeitet" werden. Mehrere browser-clients können gleichzeitig arbeiten und Tasks einreihen. Alle clients erhalten in Echtzeit alle updates.
 
 ## Aufbau
 
@@ -29,17 +29,18 @@ Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche 
 
 - ein REST endpoint (koa) bietet eine API um Tasks einzureihen
 - neue Tasks werden als unfertig in einer Warteschlange eingereiht
-- neue Tasks mit hoher Priorität werden bevorzugt bearbeitet
+- Tasks mit hoher Priorität werden bevorzugt bearbeitet
 - normale Tasks brauchen etwa 5-10 Sekunden zur Bearbeitung
-- ein SocketIO server benachrichtigt alle clients über:
+- ein Socket.IO server benachrichtigt alle clients über:
   - neuer Task erstellt
   - Task fertig bearbeitet
 - alle clients sollen immer mit allen aktuellen Tasks synchronisiert sein
+- beim Verbinden eines neuen clients soll dieser alle bisherigen Tasks erhalten
 - Tasks müssen einzeln hintereinander abgearbeitet werden
 
 ### Code
 
-- die koa app und der socketIO server sind schon aufgesetzt in `server/index.js`
+- die koa app und der Socket.IO server sind schon aufgesetzt in `server/index.js`
 - Ausführen mit `npm run server` (erreichbar unter `http://localhost:4000`)
 - ISO timestamps können mit `moment().toISOString()` generiert werden (`import moment from moment`)
 
@@ -53,10 +54,10 @@ Dieses Projekt soll Tasks (simple Objekte) auf einem Server abspeichern, welche 
 
 - Ein Formular umfasst ein Textfeld für eine Beliebige Bezeichnung, eine Checkbox für Prioritätsstatus und einen submit Button
 - Tasks werden in einer Liste/Tabelle angezeigt
-- neue Tasks werden durch socketIO asynchron empfangen und automatisch der Liste hinzugefügt oder aktualisiert (Sortierung absteigend nach timestamp)
+- neue Tasks werden durch Socket.IO asynchron empfangen und automatisch der Liste hinzugefügt oder aktualisiert (Sortierung absteigend nach timestamp)
 - Unfertige Tasks werden als solche markiert (z.B. mit dem Spinner component)
 - Priorisierte Tasks werden als solche markiert
-- Der SocketIO Client soll als HoC (Higher-Order Component) implementiert werden
+- Der Socket.IO Client soll als HoC (Higher-Order Component) implementiert werden
 
 ### Code
 
