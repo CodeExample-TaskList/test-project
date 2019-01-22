@@ -1,12 +1,12 @@
 import React from "react"
-import { Container, Alert } from "reactstrap"
+import { Container, Alert } from "react-bootstrap"
 
 import Spinner from "components/Spinner"
 
 const Root = props => {
   return (
     <Container>
-      <Alert color="info" className="mt-5">
+      <Alert variant="info" className="mt-5">
         <code>containers/Root</code>
       </Alert>
       <div className="text-center">
