@@ -1,15 +1,16 @@
 import Koa from 'koa'
 import Io from 'socket.io'
-import createServer from 'http'
+import { createServer } from 'http'
 import sleep from 'sleep-promise'
 
 import uuid from 'uuid/v4'
-import isNullOrUndefined from 'util'
+import { isNullOrUndefined } from 'util'
 
 import Queue from '../src/utility/Queue'
 
 const app = new Koa()
 const server = createServer(app.callback())
+
 const io = Io(server)
 
 const ALL_TASKS = new Map()

@@ -67,7 +67,6 @@ const withSocket = App => {
         }
 
         render() {
-            console.log('before propping', this.state.taskMap)
             //
             return (
                 <App
