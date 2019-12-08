@@ -1,7 +1,11 @@
-import React from "react"
-import { render } from "react-dom"
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import "bootstrap/dist/css/bootstrap.min.css"
-import Root from "./containers/Root"
+import App from './components/App'
+import withSocket from './components/AppWithSocket'
 
-render(<Root />, document.getElementById("root"))
+const rootElement = document.getElementById('root')
+
+const AppWithSocket = withSocket(App)
+
+ReactDOM.render(<AppWithSocket />, rootElement)
